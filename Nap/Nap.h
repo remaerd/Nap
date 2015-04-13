@@ -6,7 +6,7 @@
 //  Copyright (c) 2015 Extremely Limited. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
 
 //! Project version number for Nap.
 FOUNDATION_EXPORT double NapVersionNumber;
