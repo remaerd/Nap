@@ -8,7 +8,7 @@
 
 import Foundation
 import Alamofire
-
+import Security
 
 #if os(iOS)
   import UIKit

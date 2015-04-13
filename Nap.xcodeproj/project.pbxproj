@@ -39,7 +39,6 @@
 		038620181AC689F10017A9D0 /* XAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038620161AC689F10017A9D0 /* XAuth.swift */; };
 		0386201A1AC689F70017A9D0 /* AppleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038620191AC689F70017A9D0 /* AppleAuth.swift */; };
 		0386201B1AC689F70017A9D0 /* AppleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038620191AC689F70017A9D0 /* AppleAuth.swift */; };
-		03CBBE201ADB5EBA005C3028 /* CryptoSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03CBBE1F1ADB5EBA005C3028 /* CryptoSwift.framework */; };
 		03CBBE221ADB62CC005C3028 /* OSXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBBE211ADB62CC005C3028 /* OSXLoginViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -94,7 +93,6 @@
 		038620131AC689E80017A9D0 /* BasicAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAuth.swift; sourceTree = "<group>"; };
 		038620161AC689F10017A9D0 /* XAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAuth.swift; sourceTree = "<group>"; };
 		038620191AC689F70017A9D0 /* AppleAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleAuth.swift; sourceTree = "<group>"; };
-		03CBBE1F1ADB5EBA005C3028 /* CryptoSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CryptoSwift.framework; path = "../CryptoSwift/build/Release-iphoneos/CryptoSwift.framework"; sourceTree = "<group>"; };
 		03CBBE211ADB62CC005C3028 /* OSXLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSXLoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,7 +104,6 @@
 				032ACE8E1AC6D27C00A39940 /* UIKit.framework in Frameworks */,
 				03861F871AC67F1E0017A9D0 /* Alamofire.framework in Frameworks */,
 				032ACE921AC91F2400A39940 /* Security.framework in Frameworks */,
-				03CBBE201ADB5EBA005C3028 /* CryptoSwift.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +209,6 @@
 		03861F881AC67F220017A9D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				03CBBE1F1ADB5EBA005C3028 /* CryptoSwift.framework */,
 				032ACE931AC91F2C00A39940 /* Security.framework */,
 				032ACE911AC91F2400A39940 /* Security.framework */,
 				032ACE8F1AC6D28300A39940 /* AppKit.framework */,
@@ -682,7 +678,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/remaerd/Documents/Projects/Personal/xingzhi/Application/Xingzhi/Carthage/Build/iOS,
-					"/Users/remaerd/Documents/Projects/OpenSource/CryptoSwift/build/Release-iphoneos",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Nap/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
@@ -706,7 +701,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					/Users/remaerd/Documents/Projects/Personal/xingzhi/Application/Xingzhi/Carthage/Build/iOS,
-					"/Users/remaerd/Documents/Projects/OpenSource/CryptoSwift/build/Release-iphoneos",
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/Nap/Info-iOS.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
