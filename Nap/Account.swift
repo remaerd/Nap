@@ -21,7 +21,7 @@ public class Account : NSObject {
   }
   
   
-  public class func fetch(keychainIdentifier: String) -> [Account] {
+  public class func fetch(keychainIdentifier: String) -> [Account]? {
     return [Account]()
   }
   
