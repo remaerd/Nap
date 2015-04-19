@@ -70,7 +70,10 @@ public class OAuth1Manager : AuthManager {
   
   
   public override func login(completionHandler: ((account: Account?, error: NSError?) -> Void)) {
+    println("Logging in")
     self.requestToken { (account, error) -> Void in
+      println(account?.userInfo)
+      println(account?.userInfo)
       if error != nil { completionHandler(account: nil,error: error) }
       else if account != nil {
         self.authorize(account!, completionHandler: { (account, error) -> Void in
