@@ -36,4 +36,10 @@ public class AuthManager : Manager {
   public func login(completionHandler: ((account: Account?, error: NSError?) -> Void)) {
     
   }
+  
+  
+  public override func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]?, encoding: ParameterEncoding) -> Request {
+    let url = self.baseURL.URLByAppendingPathComponent(URLString.URLString)
+    return super.request(method, url.URLString, parameters: parameters, encoding: encoding)
+  }
 }

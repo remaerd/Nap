@@ -60,7 +60,7 @@ public class OAuth1Manager : AuthManager {
     self.realm = options["realm"]
     self.signatureMethod = options["signatureMethod"]
     super.init(options: options)
-    if self.consumerKey == nil { return nil }
+    if (self.consumerKey == nil || self.consumerSecret == nil || self.requestTokenPath == nil || self.authorizeTokenPath == nil || self.accessTokenPath != nil) { return nil }
   }
 
   
@@ -114,7 +114,7 @@ public class OAuth1Manager : AuthManager {
       }
     }
     
-    var request = super.request(method, URLString, parameters: parameters)
+    var request = super.request(method, URLString, parameters: parameters, encoding: encoding)
     var mutableRequest = request.request as! NSMutableURLRequest
     mutableRequest.setValue(authorizationHeader(), forHTTPHeaderField: "Authorization")
     mutableRequest.HTTPShouldHandleCookies = false
