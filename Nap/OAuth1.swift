@@ -132,6 +132,10 @@ extension OAuth1Manager {
     
     var error : NSError?
     let request = self.request(.GET, self.requestTokenPath, parameters: parameters, encoding: ParameterEncoding.URL)
+    
+    println(request.request)
+    println(parameters)
+    
     request.response { (request, response, object, error) -> Void in
       if error != nil { completionHandler(account: nil, error: error) }
       else {
