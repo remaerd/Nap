@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Security
 
 public class Account : NSObject {
   
@@ -18,20 +19,5 @@ public class Account : NSObject {
   
   public init(manager: AuthManager) {
     self.manager = manager
-  }
-  
-  
-  public class func fetch(keychainIdentifier: String) -> [Account]? {
-    return [Account]()
-  }
-  
-  
-  public func save() {
-    
-  }
-  
-  
-  public func delete() {
-    
   }
 }
