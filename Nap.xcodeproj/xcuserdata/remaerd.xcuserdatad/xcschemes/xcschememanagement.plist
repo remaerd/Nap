@@ -9,21 +9,24 @@
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
-			<integer>6</integer>
+			<integer>1</integer>
 		</dict>
 		<key>Nap iOS.xcscheme_^#shared#^_</key>
 		<dict>
 			<key>isShown</key>
 			<true/>
 			<key>orderHint</key>
-			<integer>5</integer>
+			<integer>0</integer>
 		</dict>
 		<key>NapDemo.xcscheme</key>
 		<dict>
-			<key>isShown</key>
-			<false/>
 			<key>orderHint</key>
-			<integer>7</integer>
+			<integer>2</integer>
+		</dict>
+		<key>NapTests.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>3</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
@@ -64,6 +67,51 @@
 			<true/>
 		</dict>
 		<key>03861FEB1AC680E30017A9D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>03A551DB1AE3509D00DB71EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>03A551ED1AE350E300DB71EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>03A551FC1AE3513E00DB71EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>03A552101AE3513E00DB71EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>03A552221AE351D300DB71EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>03A552361AE351D400DB71EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>03A552481AE3520A00DB71EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>03A5525C1AE352BC00DB71EC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>03A552701AE352BD00DB71EC</key>
 		<dict>
 			<key>primary</key>
 			<true/>

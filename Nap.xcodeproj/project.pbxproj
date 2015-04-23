@@ -7,26 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		032842E51AE7A65D0060F090 /* Nap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03861F6A1AC67BF90017A9D0 /* Nap.framework */; };
+		032842E61AE7A66F0060F090 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03861F861AC67F1E0017A9D0 /* Alamofire.framework */; };
 		032ACE8E1AC6D27C00A39940 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032ACE8D1AC6D27C00A39940 /* UIKit.framework */; };
 		032ACE901AC6D28300A39940 /* AppKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032ACE8F1AC6D28300A39940 /* AppKit.framework */; };
-		032ACE921AC91F2400A39940 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032ACE911AC91F2400A39940 /* Security.framework */; };
-		032ACE941AC91F2C00A39940 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 032ACE931AC91F2C00A39940 /* Security.framework */; };
 		032ACE9F1AC9220100A39940 /* Nap.h in Headers */ = {isa = PBXBuildFile; fileRef = 03861F6F1AC67BF90017A9D0 /* Nap.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		034AC7B71AE755CD0099C7A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034AC7B61AE755CD0099C7A8 /* Constants.swift */; };
+		034AC7B81AE755CD0099C7A8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034AC7B61AE755CD0099C7A8 /* Constants.swift */; };
+		034AC7BA1AE777FF0099C7A8 /* iOS-OAuth1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 034AC7B91AE777FF0099C7A8 /* iOS-OAuth1.swift */; };
 		03861F701AC67BF90017A9D0 /* Nap.h in Headers */ = {isa = PBXBuildFile; fileRef = 03861F6F1AC67BF90017A9D0 /* Nap.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		03861F761AC67BF90017A9D0 /* Nap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03861F6A1AC67BF90017A9D0 /* Nap.framework */; };
-		03861F7D1AC67BF90017A9D0 /* NapTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03861F7C1AC67BF90017A9D0 /* NapTests.swift */; };
 		03861F871AC67F1E0017A9D0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03861F861AC67F1E0017A9D0 /* Alamofire.framework */; };
 		03861FA81AC67F640017A9D0 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03861FA71AC67F640017A9D0 /* Alamofire.framework */; };
-		03861FDB1AC680E30017A9D0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03861FDA1AC680E30017A9D0 /* AppDelegate.swift */; };
-		03861FDD1AC680E30017A9D0 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03861FDC1AC680E30017A9D0 /* MasterViewController.swift */; };
-		03861FDF1AC680E30017A9D0 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03861FDE1AC680E30017A9D0 /* DetailViewController.swift */; };
-		03861FE21AC680E30017A9D0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03861FE01AC680E30017A9D0 /* Main.storyboard */; };
-		03861FE41AC680E30017A9D0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03861FE31AC680E30017A9D0 /* Images.xcassets */; };
-		03861FE71AC680E30017A9D0 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03861FE51AC680E30017A9D0 /* LaunchScreen.xib */; };
-		03861FF31AC680E40017A9D0 /* NapDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03861FF21AC680E40017A9D0 /* NapDemoTests.swift */; };
 		03861FFD1AC681CB0017A9D0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03861FFC1AC681CB0017A9D0 /* Account.swift */; };
 		03861FFE1AC681CB0017A9D0 /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03861FFC1AC681CB0017A9D0 /* Account.swift */; };
-		038620031AC681E40017A9D0 /* iOSLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038620021AC681E40017A9D0 /* iOSLoginViewController.swift */; };
 		038620061AC6845E0017A9D0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038620051AC6845E0017A9D0 /* AuthManager.swift */; };
 		038620071AC6845E0017A9D0 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038620051AC6845E0017A9D0 /* AuthManager.swift */; };
 		0386200E1AC689C70017A9D0 /* OAuth1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0386200D1AC689C70017A9D0 /* OAuth1.swift */; };
@@ -39,22 +32,28 @@
 		038620181AC689F10017A9D0 /* XAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038620161AC689F10017A9D0 /* XAuth.swift */; };
 		0386201A1AC689F70017A9D0 /* AppleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038620191AC689F70017A9D0 /* AppleAuth.swift */; };
 		0386201B1AC689F70017A9D0 /* AppleAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 038620191AC689F70017A9D0 /* AppleAuth.swift */; };
-		03CBBE221ADB62CC005C3028 /* OSXLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03CBBE211ADB62CC005C3028 /* OSXLoginViewController.swift */; };
+		03A552621AE352BC00DB71EC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A552611AE352BC00DB71EC /* AppDelegate.swift */; };
+		03A552641AE352BC00DB71EC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A552631AE352BC00DB71EC /* ViewController.swift */; };
+		03A552671AE352BC00DB71EC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03A552651AE352BC00DB71EC /* Main.storyboard */; };
+		03A552691AE352BC00DB71EC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03A552681AE352BC00DB71EC /* Images.xcassets */; };
+		03A5526C1AE352BC00DB71EC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 03A5526A1AE352BC00DB71EC /* LaunchScreen.xib */; };
+		03A552781AE352BD00DB71EC /* NapDemoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A552771AE352BD00DB71EC /* NapDemoTests.swift */; };
+		03A552831AE3539000DB71EC /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03861F861AC67F1E0017A9D0 /* Alamofire.framework */; };
+		03A552841AE3539D00DB71EC /* Nap.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 03861F6A1AC67BF90017A9D0 /* Nap.framework */; };
+		03A552891AE3ADDC00DB71EC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A552881AE3ADDC00DB71EC /* Extensions.swift */; };
+		03A5528A1AE3ADDC00DB71EC /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03A552881AE3ADDC00DB71EC /* Extensions.swift */; };
+		03FD516B1AE4FB3E00752BED /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD51691AE4FB3E00752BED /* HMAC.swift */; };
+		03FD516C1AE4FB3E00752BED /* HMAC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD51691AE4FB3E00752BED /* HMAC.swift */; };
+		03FD516D1AE4FB3E00752BED /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD516A1AE4FB3E00752BED /* SHA1.swift */; };
+		03FD516E1AE4FB3E00752BED /* SHA1.swift in Sources */ = {isa = PBXBuildFile; fileRef = 03FD516A1AE4FB3E00752BED /* SHA1.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		03861F771AC67BF90017A9D0 /* PBXContainerItemProxy */ = {
+		03A552721AE352BD00DB71EC /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 03861F611AC67BF80017A9D0 /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 03861F691AC67BF90017A9D0;
-			remoteInfo = Nap;
-		};
-		03861FED1AC680E40017A9D0 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 03861F611AC67BF80017A9D0 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 03861FD51AC680E30017A9D0;
+			remoteGlobalIDString = 03A5525C1AE352BC00DB71EC;
 			remoteInfo = NapDemo;
 		};
 /* End PBXContainerItemProxy section */
@@ -64,36 +63,36 @@
 		032ACE8F1AC6D28300A39940 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/AppKit.framework; sourceTree = DEVELOPER_DIR; };
 		032ACE911AC91F2400A39940 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		032ACE931AC91F2C00A39940 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.10.sdk/System/Library/Frameworks/Security.framework; sourceTree = DEVELOPER_DIR; };
+		034AC7B61AE755CD0099C7A8 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		034AC7B91AE777FF0099C7A8 /* iOS-OAuth1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "iOS-OAuth1.swift"; sourceTree = "<group>"; };
 		03861F6A1AC67BF90017A9D0 /* Nap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03861F6E1AC67BF90017A9D0 /* Info-iOS.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-iOS.plist"; sourceTree = "<group>"; };
 		03861F6F1AC67BF90017A9D0 /* Nap.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Nap.h; sourceTree = "<group>"; };
-		03861F751AC67BF90017A9D0 /* NapTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NapTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03861F7B1AC67BF90017A9D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03861F7C1AC67BF90017A9D0 /* NapTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapTests.swift; sourceTree = "<group>"; };
 		03861F861AC67F1E0017A9D0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../../Personal/xingzhi/Application/Xingzhi/Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 		03861F8E1AC67F570017A9D0 /* Nap.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Nap.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		03861FA71AC67F640017A9D0 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = ../../Personal/xingzhi/Application/Xingzhi/Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
-		03861FD61AC680E30017A9D0 /* NapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		03861FD91AC680E30017A9D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03861FDA1AC680E30017A9D0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		03861FDC1AC680E30017A9D0 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		03861FDE1AC680E30017A9D0 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
-		03861FE11AC680E30017A9D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		03861FE31AC680E30017A9D0 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		03861FE61AC680E30017A9D0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		03861FEC1AC680E30017A9D0 /* NapDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NapDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03861FF11AC680E40017A9D0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		03861FF21AC680E40017A9D0 /* NapDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapDemoTests.swift; sourceTree = "<group>"; };
 		03861FFA1AC681620017A9D0 /* Info-OSX.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-OSX.plist"; sourceTree = "<group>"; };
 		03861FFC1AC681CB0017A9D0 /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
-		038620021AC681E40017A9D0 /* iOSLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iOSLoginViewController.swift; sourceTree = "<group>"; };
 		038620051AC6845E0017A9D0 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		0386200D1AC689C70017A9D0 /* OAuth1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth1.swift; sourceTree = "<group>"; };
 		038620101AC689E20017A9D0 /* OAuth2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OAuth2.swift; sourceTree = "<group>"; };
 		038620131AC689E80017A9D0 /* BasicAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasicAuth.swift; sourceTree = "<group>"; };
 		038620161AC689F10017A9D0 /* XAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XAuth.swift; sourceTree = "<group>"; };
 		038620191AC689F70017A9D0 /* AppleAuth.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppleAuth.swift; sourceTree = "<group>"; };
-		03CBBE211ADB62CC005C3028 /* OSXLoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OSXLoginViewController.swift; sourceTree = "<group>"; };
+		03A5525D1AE352BC00DB71EC /* NapDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NapDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		03A552601AE352BC00DB71EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03A552611AE352BC00DB71EC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		03A552631AE352BC00DB71EC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		03A552661AE352BC00DB71EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		03A552681AE352BC00DB71EC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		03A5526B1AE352BC00DB71EC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		03A552711AE352BD00DB71EC /* NapDemoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NapDemoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		03A552761AE352BD00DB71EC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		03A552771AE352BD00DB71EC /* NapDemoTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NapDemoTests.swift; sourceTree = "<group>"; };
+		03A552801AE3536D00DB71EC /* Nap.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nap.framework; path = ../../Personal/xingzhi/Application/Xingzhi/Carthage/Build/iOS/Nap.framework; sourceTree = "<group>"; };
+		03A552881AE3ADDC00DB71EC /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		03FD51691AE4FB3E00752BED /* HMAC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HMAC.swift; sourceTree = "<group>"; };
+		03FD516A1AE4FB3E00752BED /* SHA1.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SHA1.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,15 +102,6 @@
 			files = (
 				032ACE8E1AC6D27C00A39940 /* UIKit.framework in Frameworks */,
 				03861F871AC67F1E0017A9D0 /* Alamofire.framework in Frameworks */,
-				032ACE921AC91F2400A39940 /* Security.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		03861F721AC67BF90017A9D0 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				03861F761AC67BF90017A9D0 /* Nap.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -121,21 +111,24 @@
 			files = (
 				032ACE901AC6D28300A39940 /* AppKit.framework in Frameworks */,
 				03861FA81AC67F640017A9D0 /* Alamofire.framework in Frameworks */,
-				032ACE941AC91F2C00A39940 /* Security.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		03861FD31AC680E30017A9D0 /* Frameworks */ = {
+		03A5525A1AE352BC00DB71EC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				032842E51AE7A65D0060F090 /* Nap.framework in Frameworks */,
+				032842E61AE7A66F0060F090 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		03861FE91AC680E30017A9D0 /* Frameworks */ = {
+		03A5526E1AE352BD00DB71EC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03A552841AE3539D00DB71EC /* Nap.framework in Frameworks */,
+				03A552831AE3539000DB71EC /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -146,9 +139,9 @@
 			isa = PBXGroup;
 			children = (
 				03861F6C1AC67BF90017A9D0 /* Nap */,
-				03861FD71AC680E30017A9D0 /* Demo */,
+				03A5525E1AE352BC00DB71EC /* Demo */,
+				03A552741AE352BD00DB71EC /* Test */,
 				03861F881AC67F220017A9D0 /* Frameworks */,
-				0386201C1AC6909E0017A9D0 /* Tests */,
 				03861F6B1AC67BF90017A9D0 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -157,10 +150,9 @@
 			isa = PBXGroup;
 			children = (
 				03861F6A1AC67BF90017A9D0 /* Nap.framework */,
-				03861F751AC67BF90017A9D0 /* NapTests.xctest */,
 				03861F8E1AC67F570017A9D0 /* Nap.framework */,
-				03861FD61AC680E30017A9D0 /* NapDemo.app */,
-				03861FEC1AC680E30017A9D0 /* NapDemoTests.xctest */,
+				03A5525D1AE352BC00DB71EC /* NapDemo.app */,
+				03A552711AE352BD00DB71EC /* NapDemoTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -169,10 +161,10 @@
 			isa = PBXGroup;
 			children = (
 				03861FFB1AC681B70017A9D0 /* Authenticators */,
+				03FD516F1AE4FB4400752BED /* OauthSwift */,
+				034AC7B61AE755CD0099C7A8 /* Constants.swift */,
 				03861FFC1AC681CB0017A9D0 /* Account.swift */,
 				038620051AC6845E0017A9D0 /* AuthManager.swift */,
-				038620021AC681E40017A9D0 /* iOSLoginViewController.swift */,
-				03CBBE211ADB62CC005C3028 /* OSXLoginViewController.swift */,
 				03861F6D1AC67BF90017A9D0 /* Supporting Files */,
 			);
 			path = Nap;
@@ -188,27 +180,10 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		03861F791AC67BF90017A9D0 /* Nap */ = {
-			isa = PBXGroup;
-			children = (
-				03861F7C1AC67BF90017A9D0 /* NapTests.swift */,
-				03861F7A1AC67BF90017A9D0 /* Supporting Files */,
-			);
-			name = Nap;
-			path = NapTests;
-			sourceTree = "<group>";
-		};
-		03861F7A1AC67BF90017A9D0 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				03861F7B1AC67BF90017A9D0 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		03861F881AC67F220017A9D0 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				03A552801AE3536D00DB71EC /* Nap.framework */,
 				032ACE931AC91F2C00A39940 /* Security.framework */,
 				032ACE911AC91F2400A39940 /* Security.framework */,
 				032ACE8F1AC6D28300A39940 /* AppKit.framework */,
@@ -219,52 +194,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		03861FD71AC680E30017A9D0 /* Demo */ = {
-			isa = PBXGroup;
-			children = (
-				03861FDA1AC680E30017A9D0 /* AppDelegate.swift */,
-				03861FDC1AC680E30017A9D0 /* MasterViewController.swift */,
-				03861FDE1AC680E30017A9D0 /* DetailViewController.swift */,
-				03861FE01AC680E30017A9D0 /* Main.storyboard */,
-				03861FE31AC680E30017A9D0 /* Images.xcassets */,
-				03861FE51AC680E30017A9D0 /* LaunchScreen.xib */,
-				03861FD81AC680E30017A9D0 /* Supporting Files */,
-			);
-			name = Demo;
-			path = NapDemo;
-			sourceTree = "<group>";
-		};
-		03861FD81AC680E30017A9D0 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				03861FD91AC680E30017A9D0 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		03861FEF1AC680E40017A9D0 /* Demo */ = {
-			isa = PBXGroup;
-			children = (
-				03861FF21AC680E40017A9D0 /* NapDemoTests.swift */,
-				03861FF01AC680E40017A9D0 /* Supporting Files */,
-			);
-			name = Demo;
-			path = NapDemoTests;
-			sourceTree = "<group>";
-		};
-		03861FF01AC680E40017A9D0 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				03861FF11AC680E40017A9D0 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		03861FFB1AC681B70017A9D0 /* Authenticators */ = {
 			isa = PBXGroup;
 			children = (
 				038620131AC689E80017A9D0 /* BasicAuth.swift */,
 				0386200D1AC689C70017A9D0 /* OAuth1.swift */,
+				034AC7B91AE777FF0099C7A8 /* iOS-OAuth1.swift */,
 				038620101AC689E20017A9D0 /* OAuth2.swift */,
 				038620161AC689F10017A9D0 /* XAuth.swift */,
 				038620191AC689F70017A9D0 /* AppleAuth.swift */,
@@ -272,13 +207,54 @@
 			name = Authenticators;
 			sourceTree = "<group>";
 		};
-		0386201C1AC6909E0017A9D0 /* Tests */ = {
+		03A5525E1AE352BC00DB71EC /* Demo */ = {
 			isa = PBXGroup;
 			children = (
-				03861F791AC67BF90017A9D0 /* Nap */,
-				03861FEF1AC680E40017A9D0 /* Demo */,
+				03A552611AE352BC00DB71EC /* AppDelegate.swift */,
+				03A552631AE352BC00DB71EC /* ViewController.swift */,
+				03A552651AE352BC00DB71EC /* Main.storyboard */,
+				03A552681AE352BC00DB71EC /* Images.xcassets */,
+				03A5526A1AE352BC00DB71EC /* LaunchScreen.xib */,
+				03A5525F1AE352BC00DB71EC /* Supporting Files */,
 			);
-			name = Tests;
+			name = Demo;
+			path = NapDemo;
+			sourceTree = "<group>";
+		};
+		03A5525F1AE352BC00DB71EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				03A552601AE352BC00DB71EC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		03A552741AE352BD00DB71EC /* Test */ = {
+			isa = PBXGroup;
+			children = (
+				03A552771AE352BD00DB71EC /* NapDemoTests.swift */,
+				03A552751AE352BD00DB71EC /* Supporting Files */,
+			);
+			name = Test;
+			path = NapDemoTests;
+			sourceTree = "<group>";
+		};
+		03A552751AE352BD00DB71EC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				03A552761AE352BD00DB71EC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		03FD516F1AE4FB4400752BED /* OauthSwift */ = {
+			isa = PBXGroup;
+			children = (
+				03FD51691AE4FB3E00752BED /* HMAC.swift */,
+				03FD516A1AE4FB3E00752BED /* SHA1.swift */,
+				03A552881AE3ADDC00DB71EC /* Extensions.swift */,
+			);
+			name = OauthSwift;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -321,24 +297,6 @@
 			productReference = 03861F6A1AC67BF90017A9D0 /* Nap.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		03861F741AC67BF90017A9D0 /* NapTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 03861F831AC67BF90017A9D0 /* Build configuration list for PBXNativeTarget "NapTests" */;
-			buildPhases = (
-				03861F711AC67BF90017A9D0 /* Sources */,
-				03861F721AC67BF90017A9D0 /* Frameworks */,
-				03861F731AC67BF90017A9D0 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				03861F781AC67BF90017A9D0 /* PBXTargetDependency */,
-			);
-			name = NapTests;
-			productName = NapTests;
-			productReference = 03861F751AC67BF90017A9D0 /* NapTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 		03861F8D1AC67F570017A9D0 /* Nap OSX */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 03861FA11AC67F570017A9D0 /* Build configuration list for PBXNativeTarget "Nap OSX" */;
@@ -357,13 +315,14 @@
 			productReference = 03861F8E1AC67F570017A9D0 /* Nap.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		03861FD51AC680E30017A9D0 /* NapDemo */ = {
+		03A5525C1AE352BC00DB71EC /* NapDemo */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03861FF41AC680E40017A9D0 /* Build configuration list for PBXNativeTarget "NapDemo" */;
+			buildConfigurationList = 03A552791AE352BD00DB71EC /* Build configuration list for PBXNativeTarget "NapDemo" */;
 			buildPhases = (
-				03861FD21AC680E30017A9D0 /* Sources */,
-				03861FD31AC680E30017A9D0 /* Frameworks */,
-				03861FD41AC680E30017A9D0 /* Resources */,
+				03A552591AE352BC00DB71EC /* Sources */,
+				03A5525A1AE352BC00DB71EC /* Frameworks */,
+				03A5525B1AE352BC00DB71EC /* Resources */,
+				032842E41AE7A6430060F090 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -371,25 +330,26 @@
 			);
 			name = NapDemo;
 			productName = NapDemo;
-			productReference = 03861FD61AC680E30017A9D0 /* NapDemo.app */;
+			productReference = 03A5525D1AE352BC00DB71EC /* NapDemo.app */;
 			productType = "com.apple.product-type.application";
 		};
-		03861FEB1AC680E30017A9D0 /* NapDemoTests */ = {
+		03A552701AE352BD00DB71EC /* NapDemoTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03861FF71AC680E40017A9D0 /* Build configuration list for PBXNativeTarget "NapDemoTests" */;
+			buildConfigurationList = 03A5527C1AE352BD00DB71EC /* Build configuration list for PBXNativeTarget "NapDemoTests" */;
 			buildPhases = (
-				03861FE81AC680E30017A9D0 /* Sources */,
-				03861FE91AC680E30017A9D0 /* Frameworks */,
-				03861FEA1AC680E30017A9D0 /* Resources */,
+				03A5526D1AE352BD00DB71EC /* Sources */,
+				03A5526E1AE352BD00DB71EC /* Frameworks */,
+				03A5526F1AE352BD00DB71EC /* Resources */,
+				03A552851AE3541600DB71EC /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				03861FEE1AC680E40017A9D0 /* PBXTargetDependency */,
+				03A552731AE352BD00DB71EC /* PBXTargetDependency */,
 			);
 			name = NapDemoTests;
 			productName = NapDemoTests;
-			productReference = 03861FEC1AC680E30017A9D0 /* NapDemoTests.xctest */;
+			productReference = 03A552711AE352BD00DB71EC /* NapDemoTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -404,18 +364,15 @@
 					03861F691AC67BF90017A9D0 = {
 						CreatedOnToolsVersion = 6.3;
 					};
-					03861F741AC67BF90017A9D0 = {
-						CreatedOnToolsVersion = 6.3;
-					};
 					03861F8D1AC67F570017A9D0 = {
 						CreatedOnToolsVersion = 6.3;
 					};
-					03861FD51AC680E30017A9D0 = {
+					03A5525C1AE352BC00DB71EC = {
 						CreatedOnToolsVersion = 6.3;
 					};
-					03861FEB1AC680E30017A9D0 = {
+					03A552701AE352BD00DB71EC = {
 						CreatedOnToolsVersion = 6.3;
-						TestTargetID = 03861FD51AC680E30017A9D0;
+						TestTargetID = 03A5525C1AE352BC00DB71EC;
 					};
 				};
 			};
@@ -434,22 +391,14 @@
 			targets = (
 				03861F691AC67BF90017A9D0 /* Nap iOS */,
 				03861F8D1AC67F570017A9D0 /* Nap OSX */,
-				03861FD51AC680E30017A9D0 /* NapDemo */,
-				03861F741AC67BF90017A9D0 /* NapTests */,
-				03861FEB1AC680E30017A9D0 /* NapDemoTests */,
+				03A5525C1AE352BC00DB71EC /* NapDemo */,
+				03A552701AE352BD00DB71EC /* NapDemoTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		03861F681AC67BF90017A9D0 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		03861F731AC67BF90017A9D0 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -463,17 +412,17 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		03861FD41AC680E30017A9D0 /* Resources */ = {
+		03A5525B1AE352BC00DB71EC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03861FE21AC680E30017A9D0 /* Main.storyboard in Resources */,
-				03861FE71AC680E30017A9D0 /* LaunchScreen.xib in Resources */,
-				03861FE41AC680E30017A9D0 /* Images.xcassets in Resources */,
+				03A552671AE352BC00DB71EC /* Main.storyboard in Resources */,
+				03A5526C1AE352BC00DB71EC /* LaunchScreen.xib in Resources */,
+				03A552691AE352BC00DB71EC /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		03861FEA1AC680E30017A9D0 /* Resources */ = {
+		03A5526F1AE352BD00DB71EC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -482,27 +431,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		032842E41AE7A6430060F090 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				/Users/remaerd/Documents/Projects/Personal/xingzhi/Application/Xingzhi/Carthage/Build/iOS/Alamofire.framework,
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		03A552851AE3541600DB71EC /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				/Users/remaerd/Documents/Projects/Personal/xingzhi/Application/Xingzhi/Carthage/Build/iOS/Alamofire.framework,
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		03861F651AC67BF90017A9D0 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				038620031AC681E40017A9D0 /* iOSLoginViewController.swift in Sources */,
+				034AC7BA1AE777FF0099C7A8 /* iOS-OAuth1.swift in Sources */,
 				038620171AC689F10017A9D0 /* XAuth.swift in Sources */,
 				038620061AC6845E0017A9D0 /* AuthManager.swift in Sources */,
 				038620111AC689E20017A9D0 /* OAuth2.swift in Sources */,
 				03861FFD1AC681CB0017A9D0 /* Account.swift in Sources */,
 				038620141AC689E80017A9D0 /* BasicAuth.swift in Sources */,
+				03FD516B1AE4FB3E00752BED /* HMAC.swift in Sources */,
 				0386201A1AC689F70017A9D0 /* AppleAuth.swift in Sources */,
+				03A552891AE3ADDC00DB71EC /* Extensions.swift in Sources */,
+				03FD516D1AE4FB3E00752BED /* SHA1.swift in Sources */,
 				0386200E1AC689C70017A9D0 /* OAuth1.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		03861F711AC67BF90017A9D0 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				03861F7D1AC67BF90017A9D0 /* NapTests.swift in Sources */,
+				034AC7B71AE755CD0099C7A8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,59 +490,56 @@
 				038620071AC6845E0017A9D0 /* AuthManager.swift in Sources */,
 				038620121AC689E20017A9D0 /* OAuth2.swift in Sources */,
 				03861FFE1AC681CB0017A9D0 /* Account.swift in Sources */,
-				03CBBE221ADB62CC005C3028 /* OSXLoginViewController.swift in Sources */,
 				038620151AC689E80017A9D0 /* BasicAuth.swift in Sources */,
+				03FD516C1AE4FB3E00752BED /* HMAC.swift in Sources */,
 				0386201B1AC689F70017A9D0 /* AppleAuth.swift in Sources */,
+				03A5528A1AE3ADDC00DB71EC /* Extensions.swift in Sources */,
+				03FD516E1AE4FB3E00752BED /* SHA1.swift in Sources */,
 				0386200F1AC689C70017A9D0 /* OAuth1.swift in Sources */,
+				034AC7B81AE755CD0099C7A8 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		03861FD21AC680E30017A9D0 /* Sources */ = {
+		03A552591AE352BC00DB71EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03861FDF1AC680E30017A9D0 /* DetailViewController.swift in Sources */,
-				03861FDD1AC680E30017A9D0 /* MasterViewController.swift in Sources */,
-				03861FDB1AC680E30017A9D0 /* AppDelegate.swift in Sources */,
+				03A552641AE352BC00DB71EC /* ViewController.swift in Sources */,
+				03A552621AE352BC00DB71EC /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		03861FE81AC680E30017A9D0 /* Sources */ = {
+		03A5526D1AE352BD00DB71EC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03861FF31AC680E40017A9D0 /* NapDemoTests.swift in Sources */,
+				03A552781AE352BD00DB71EC /* NapDemoTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		03861F781AC67BF90017A9D0 /* PBXTargetDependency */ = {
+		03A552731AE352BD00DB71EC /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 03861F691AC67BF90017A9D0 /* Nap iOS */;
-			targetProxy = 03861F771AC67BF90017A9D0 /* PBXContainerItemProxy */;
-		};
-		03861FEE1AC680E40017A9D0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 03861FD51AC680E30017A9D0 /* NapDemo */;
-			targetProxy = 03861FED1AC680E40017A9D0 /* PBXContainerItemProxy */;
+			target = 03A5525C1AE352BC00DB71EC /* NapDemo */;
+			targetProxy = 03A552721AE352BD00DB71EC /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		03861FE01AC680E30017A9D0 /* Main.storyboard */ = {
+		03A552651AE352BC00DB71EC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				03861FE11AC680E30017A9D0 /* Base */,
+				03A552661AE352BC00DB71EC /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		03861FE51AC680E30017A9D0 /* LaunchScreen.xib */ = {
+		03A5526A1AE352BC00DB71EC /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
-				03861FE61AC680E30017A9D0 /* Base */,
+				03A5526B1AE352BC00DB71EC /* Base */,
 			);
 			name = LaunchScreen.xib;
 			sourceTree = "<group>";
@@ -712,36 +685,6 @@
 			};
 			name = Release;
 		};
-		03861F841AC67BF90017A9D0 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = NapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		03861F851AC67BF90017A9D0 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = NapTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
 		03861FA21AC67F570017A9D0 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -800,58 +743,72 @@
 			};
 			name = Release;
 		};
-		03861FF51AC680E40017A9D0 /* Debug */ = {
+		03A5527A1AE352BD00DB71EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/remaerd/Documents/Projects/Personal/xingzhi/Application/Xingzhi/Carthage/Build/iOS,
+				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = NapDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
 		};
-		03861FF61AC680E40017A9D0 /* Release */ = {
+		03A5527B1AE352BD00DB71EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					/Users/remaerd/Documents/Projects/Personal/xingzhi/Application/Xingzhi/Carthage/Build/iOS,
+				);
 				INFOPLIST_FILE = NapDemo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
-		03861FF81AC680E40017A9D0 /* Debug */ = {
+		03A5527D1AE352BD00DB71EC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					/Users/remaerd/Documents/Projects/Personal/xingzhi/Application/Xingzhi/Carthage/Build/iOS,
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = NapDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NapDemo.app/NapDemo";
 			};
 			name = Debug;
 		};
-		03861FF91AC680E40017A9D0 /* Release */ = {
+		03A5527E1AE352BD00DB71EC /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					/Users/remaerd/Documents/Projects/Personal/xingzhi/Application/Xingzhi/Carthage/Build/iOS,
 				);
 				INFOPLIST_FILE = NapDemoTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NapDemo.app/NapDemo";
@@ -879,15 +836,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03861F831AC67BF90017A9D0 /* Build configuration list for PBXNativeTarget "NapTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				03861F841AC67BF90017A9D0 /* Debug */,
-				03861F851AC67BF90017A9D0 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		03861FA11AC67F570017A9D0 /* Build configuration list for PBXNativeTarget "Nap OSX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -897,20 +845,20 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03861FF41AC680E40017A9D0 /* Build configuration list for PBXNativeTarget "NapDemo" */ = {
+		03A552791AE352BD00DB71EC /* Build configuration list for PBXNativeTarget "NapDemo" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03861FF51AC680E40017A9D0 /* Debug */,
-				03861FF61AC680E40017A9D0 /* Release */,
+				03A5527A1AE352BD00DB71EC /* Debug */,
+				03A5527B1AE352BD00DB71EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		03861FF71AC680E40017A9D0 /* Build configuration list for PBXNativeTarget "NapDemoTests" */ = {
+		03A5527C1AE352BD00DB71EC /* Build configuration list for PBXNativeTarget "NapDemoTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03861FF81AC680E40017A9D0 /* Debug */,
-				03861FF91AC680E40017A9D0 /* Release */,
+				03A5527D1AE352BD00DB71EC /* Debug */,
+				03A5527E1AE352BD00DB71EC /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

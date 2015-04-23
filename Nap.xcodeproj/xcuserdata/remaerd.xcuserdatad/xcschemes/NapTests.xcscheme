@@ -9,28 +9,14 @@
          <BuildActionEntry
             buildForTesting = "YES"
             buildForRunning = "YES"
-            buildForProfiling = "YES"
-            buildForArchiving = "YES"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "03A552221AE351D300DB71EC"
-               BuildableName = "NapDemo.app"
-               BlueprintName = "NapDemo"
-               ReferencedContainer = "container:Nap.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "03A552361AE351D400DB71EC"
-               BuildableName = "NapDemoTests.xctest"
-               BlueprintName = "NapDemoTests"
+               BlueprintIdentifier = "03A552481AE3520A00DB71EC"
+               BuildableName = "NapTests.xctest"
+               BlueprintName = "NapTests"
                ReferencedContainer = "container:Nap.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +32,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "03A552361AE351D400DB71EC"
-               BuildableName = "NapDemoTests.xctest"
-               BlueprintName = "NapDemoTests"
+               BlueprintIdentifier = "03A552481AE3520A00DB71EC"
+               BuildableName = "NapTests.xctest"
+               BlueprintName = "NapTests"
                ReferencedContainer = "container:Nap.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +42,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "03A552221AE351D300DB71EC"
-            BuildableName = "NapDemo.app"
-            BlueprintName = "NapDemo"
+            BlueprintIdentifier = "03A552481AE3520A00DB71EC"
+            BuildableName = "NapTests.xctest"
+            BlueprintName = "NapTests"
             ReferencedContainer = "container:Nap.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -72,16 +58,15 @@
       ignoresPersistentStateOnLaunch = "NO"
       debugDocumentVersioning = "YES"
       allowLocationSimulation = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "03A552221AE351D300DB71EC"
-            BuildableName = "NapDemo.app"
-            BlueprintName = "NapDemo"
+            BlueprintIdentifier = "03A552481AE3520A00DB71EC"
+            BuildableName = "NapTests.xctest"
+            BlueprintName = "NapTests"
             ReferencedContainer = "container:Nap.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
       <AdditionalOptions>
       </AdditionalOptions>
    </LaunchAction>
@@ -91,16 +76,15 @@
       useCustomWorkingDirectory = "NO"
       buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
-      <BuildableProductRunnable
-         runnableDebuggingMode = "0">
+      <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "03A552221AE351D300DB71EC"
-            BuildableName = "NapDemo.app"
-            BlueprintName = "NapDemo"
+            BlueprintIdentifier = "03A552481AE3520A00DB71EC"
+            BuildableName = "NapTests.xctest"
+            BlueprintName = "NapTests"
             ReferencedContainer = "container:Nap.xcodeproj">
          </BuildableReference>
-      </BuildableProductRunnable>
+      </MacroExpansion>
    </ProfileAction>
    <AnalyzeAction
       buildConfiguration = "Debug">

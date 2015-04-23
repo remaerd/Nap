@@ -11,10 +11,16 @@ import Alamofire
 public class AuthManager : Manager {
   
   public let baseURL            : NSURL!
-  public let keychainIdentifier : String!
-  public let idKey              : String!
-  public let usernameKey        : String?
+  public var keychainIdentifier : String?
+  public var idKey              : String?
+  public var usernameKey        : String?
   public lazy var accounts      = [Account]()
+  
+  
+  public init(baseURL:NSURL) {
+    self.baseURL = baseURL
+    super.init(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+  }
   
   
   public init?(options: [String:String]) {
@@ -25,16 +31,15 @@ public class AuthManager : Manager {
     self.idKey = options["idKey"]
     self.usernameKey = options["usernameKey"]
     super.init(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
+    if self.baseURL == nil {
+      println("Base URL is missing")
+      return nil
+    }
   }
 
   
   public required init(configuration: NSURLSessionConfiguration?) {
     fatalError("init(configuration:) has not been implemented")
-  }
-  
-  
-  public func login(completionHandler: ((account: Account?, error: NSError?) -> Void)) {
-    
   }
   
   
