@@ -14,6 +14,7 @@ import UIKit
 
 public typealias ViewController = UIViewController
 
+
 public extension OAuth1Manager {
   
   public func authorize(loginController: ViewController? = nil) {
@@ -70,6 +71,7 @@ public class LoginViewController : UIViewController, LoginViewControllerProtocol
   
   
   func didTappedCancel() {
+    self.manager?.authDelegate?.didCancelAuthentication(self.manager!)
     self.dismissViewControllerAnimated(true, completion: nil)
   }
   
@@ -78,7 +80,7 @@ public class LoginViewController : UIViewController, LoginViewControllerProtocol
     if let verifier = self.manager!.verifierWithURLRequest(request) {
       self.manager?.accessToken(verifier, completionHandler: { (account, error) -> Void in
         if error != nil { println("Cannot return Access token") }
-        else { println("Logged in as \(account!.username!)") }
+        else { self.manager?.authDelegate?.didFinishAuthentication(self.manager!,account:account!) }
       })
       self.dismissViewControllerAnimated(true, completion: nil)
       return false

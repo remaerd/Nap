@@ -8,12 +8,20 @@
 
 import Alamofire
 
+public protocol AuthManagerDelegate {
+  
+  func didCancelAuthentication(manager:AuthManager)
+  func didFinishAuthentication(manager:AuthManager, account:Account)
+}
+
+
 public class AuthManager : Manager {
   
   public let baseURL            : NSURL!
   public var keychainIdentifier : String?
   public var idKey              : String?
   public var usernameKey        : String?
+  public var authDelegate       : AuthManagerDelegate?
   public lazy var accounts      = [Account]()
   
   
