@@ -219,8 +219,8 @@ extension OAuth1Manager {
 
 
 public struct OAuth1Token {
-  let key       : String
-  let secret    : String
+  public let key    : String
+  public let secret : String
 }
 
 
