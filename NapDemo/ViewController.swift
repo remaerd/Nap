@@ -10,7 +10,7 @@ import UIKit
 import Nap
 
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, AuthManagerDelegate {
   
   let options = [
     "baseURL"           : "https://api.twitter.com",
@@ -20,9 +20,9 @@ class ViewController: UIViewController {
     "requestTokenPath"  : "oauth/request_token",
     "accessTokenPath"   : "oauth/access_token",
     "authorizePath"     : "oauth/authorize",
-    "callbackURL"       : "http://neue.io/callback",
-    "consumerKey"       : "ET0UwdOuPYQGOl2pxjA41KWyp",
-    "consumerSecret"    : "xFoalg85UCMSIL1AsjXldA6WZHtI9nAYAlRZYJPAe5F6FxtB3G"]
+    "callbackURL"       : "http://example.com",
+    "consumerKey"       : "***",
+    "consumerSecret"    : "***"]
 
   
   var manager : OAuth1Manager?
@@ -35,6 +35,10 @@ class ViewController: UIViewController {
       if error != nil { println("Unable to get request token from Twitter") }
       else { self.manager?.authorize(loginController: LoginViewController()) }
     })
+  }
+  
+  func didFinishAuthentication(manager: AuthManager, account: Account) {
+    <#code#>
   }
   
 

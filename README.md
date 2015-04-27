@@ -11,7 +11,8 @@ Nap is a REST API authentication frameworks designed for Alamofire
 # Requirements
 
 - iOS 8.0 / Mac OS X 10.9+
-- XCode 6.3
+- XCode 6.3+
+- Alamofire 1.2+
 
 # Install *Nap* with Carthage
 
