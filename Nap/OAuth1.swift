@@ -220,8 +220,14 @@ extension OAuth1Manager {
 
 
 public struct OAuth1Token {
+  
   public let key    : String
   public let secret : String
+  
+  public init(key:String, secret:String) {
+    self.key = key
+    self.secret = secret
+  }
 }
 
 
