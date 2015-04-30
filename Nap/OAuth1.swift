@@ -91,7 +91,7 @@ public class OAuth1Manager : AuthManager {
   private func OAuth1Signature(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]) -> String {
     var tokenSecret = "\(self.consumerSecret.urlEncodedStringWithEncoding(NSUTF8StringEncoding))&"
     if let accessToken = self.account?.accessToken { tokenSecret +=  accessToken.secret.urlEncodedStringWithEncoding(NSUTF8StringEncoding) }
-    if let requestToken = self.account?.requestToken { tokenSecret += requestToken.secret.urlEncodedStringWithEncoding(NSUTF8StringEncoding) }
+    else if let requestToken = self.account?.requestToken { tokenSecret += requestToken.secret.urlEncodedStringWithEncoding(NSUTF8StringEncoding) }
     let key = tokenSecret.dataUsingEncoding(NSUTF8StringEncoding)
     
     var queryString = ""
@@ -137,6 +137,8 @@ public class OAuth1Manager : AuthManager {
       }
     }
     
+    
+    if let token = self.account?.accessToken { mutableParameters["oauth_token"] = token.key }
     var request = super.request(method, URLString, parameters: mutableParameters, encoding: encoding)
     var mutableRequest = NSMutableURLRequest(URL: self.baseURL.URLByAppendingPathComponent(URLString.URLString))
     mutableRequest.HTTPMethod = method.rawValue

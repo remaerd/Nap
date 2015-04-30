@@ -22,7 +22,6 @@ public class AuthManager : Manager {
   public var idKey              : String?
   public var usernameKey        : String?
   public var authDelegate       : AuthManagerDelegate?
-  public lazy var accounts      = [Account]()
   
   
   public init(baseURL:NSURL) {
