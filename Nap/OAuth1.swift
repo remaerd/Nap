@@ -29,11 +29,10 @@ public class OAuth1Manager : AuthManager {
   let scope                   : String?
   let realm                   : String?
   let signatureMethod         : String?
-  var account                 : OAuth1Account?
-  
+
   
   public var authorizeURL : NSURL? {
-    if let key = self.account?.requestToken?.key { return NSURL(string: "\(self.baseURL.URLString)/\(self.authorizePath)?oauth_token=\(key)")! }
+    if let key = (self.account as? OAuth1Account)?.requestToken?.key { return NSURL(string: "\(self.baseURL.URLString)/\(self.authorizePath)?oauth_token=\(key)")! }
     return nil
   }
   
@@ -90,8 +89,8 @@ public class OAuth1Manager : AuthManager {
   
   private func OAuth1Signature(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]) -> String {
     var tokenSecret = "\(self.consumerSecret.urlEncodedStringWithEncoding(NSUTF8StringEncoding))&"
-    if let accessToken = self.account?.accessToken { tokenSecret +=  accessToken.secret.urlEncodedStringWithEncoding(NSUTF8StringEncoding) }
-    else if let requestToken = self.account?.requestToken { tokenSecret += requestToken.secret.urlEncodedStringWithEncoding(NSUTF8StringEncoding) }
+    if let accessToken = (self.account as? OAuth1Account)?.accessToken { tokenSecret +=  accessToken.secret.urlEncodedStringWithEncoding(NSUTF8StringEncoding) }
+    else if let requestToken = (self.account as? OAuth1Account)?.requestToken { tokenSecret += requestToken.secret.urlEncodedStringWithEncoding(NSUTF8StringEncoding) }
     let key = tokenSecret.dataUsingEncoding(NSUTF8StringEncoding)
     
     var queryString = ""
@@ -115,6 +114,7 @@ public class OAuth1Manager : AuthManager {
         if key.hasPrefix("oauth_") { authorizationParameters[key] = value }
       }
     }
+    if let token = (self.account as? OAuth1Account)?.accessToken { authorizationParameters["oauth_token"] = token.key }
     authorizationParameters["oauth_signature"] = self.OAuth1Signature(method, URLString, parameters: authorizationParameters)
     var parameterComponents = authorizationParameters.urlEncodedQueryStringWithEncoding(NSUTF8StringEncoding).componentsSeparatedByString("&") as [String]
     parameterComponents.sort { $0 < $1 }
@@ -137,8 +137,6 @@ public class OAuth1Manager : AuthManager {
       }
     }
     
-    
-    if let token = self.account?.accessToken { mutableParameters["oauth_token"] = token.key }
     var request = super.request(method, URLString, parameters: mutableParameters, encoding: encoding)
     var mutableRequest = NSMutableURLRequest(URL: self.baseURL.URLByAppendingPathComponent(URLString.URLString))
     mutableRequest.HTTPMethod = method.rawValue
@@ -168,8 +166,9 @@ extension OAuth1Manager {
       else if let data = result as? NSData, queryString = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
         let parameters = queryString.parametersFromQueryString()
         if let key = parameters["oauth_token"], secret = parameters["oauth_token_secret"] {
-          self.account = OAuth1Account(manager: self)
-          self.account!.requestToken = OAuth1Token(key: key, secret: secret)
+          let account = OAuth1Account(manager: self)
+          account.requestToken = OAuth1Token(key: key, secret: secret)
+          self.account = account
           completionHandler(account: self.account!, error: nil)
         } else {
           let error = NSError(domain: NapErrorDomain, code: NapError.CannotReadOAuth1DataFromQueryString.rawValue, userInfo: nil)
@@ -190,7 +189,7 @@ extension OAuth1Manager {
 
   
   public func accessToken(verifier: String, completionHandler:((account: Account?, error: NSError?)  -> Void)) {
-    if let oauth1Account = self.account, requestToken = oauth1Account.requestToken {
+    if let oauth1Account = self.account as? OAuth1Account, requestToken = oauth1Account.requestToken {
       var parameters = [String: AnyObject]()
       parameters["oauth_token"]    = requestToken.key
       parameters["oauth_verifier"] = verifier
@@ -202,7 +201,7 @@ extension OAuth1Manager {
           let parameters = (parameterString as String).parametersFromQueryString()
           if let token = parameters["oauth_token"], secret = parameters["oauth_token_secret"] {
             let accessToken = OAuth1Token(key: token, secret: secret)
-            self.account?.accessToken = accessToken
+            (self.account as? OAuth1Account)?.accessToken = accessToken
             if let key = self.idKey, id = parameters[key] { self.account?.userID = id }
             if let key = self.usernameKey, username = parameters[key] { self.account?.username = username }
             completionHandler(account: self.account, error: nil)

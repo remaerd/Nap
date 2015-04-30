@@ -22,6 +22,7 @@ public class AuthManager : Manager {
   public var idKey              : String?
   public var usernameKey        : String?
   public var authDelegate       : AuthManagerDelegate?
+  public var account            : Account?
   
   
   public init(baseURL:NSURL) {

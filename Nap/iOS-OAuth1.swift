@@ -18,7 +18,7 @@ public typealias ViewController = UIViewController
 public extension OAuth1Manager {
   
   public func authorize(loginController: ViewController? = nil) {
-    if let key = self.account?.requestToken?.key {
+    if let key = (self.account as? OAuth1Account)?.requestToken?.key {
       let url = NSURL(string: "\(self.baseURL.URLString)/\(self.authorizePath)?oauth_token=\(key)")!
       if let viewController = loginController as? LoginViewControllerProtocol {
         UIApplication.sharedApplication().keyWindow?.rootViewController?.presentViewController(loginController!, animated: true, completion: nil)
