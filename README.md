@@ -1,4 +1,4 @@
-Nap is a REST API authentication frameworks designed for Alamofire
+*Nap* is a REST API authentication frameworks designed for Alamofire
 
 # Features
 
@@ -24,7 +24,7 @@ $ brew update
 $ brew install carthage
 ```
 
-To integrate Alamofire into your Xcode project using Carthage, specify it in your Cartfile:
+To integrate *Nap* into your Xcode project using Carthage, specify it in your Cartfile:
 
 ```
 github "Alamofire/Alamofire" >= 1.2
