@@ -1,3 +1,5 @@
+![](http://f.cl.ly/items/1E3t0t3H1n2j3m231X1E/NAP.png)
+
 *Nap* is a REST API authentication frameworks designed for Alamofire
 
 # Features
