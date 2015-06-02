@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "03A552221AE351D300DB71EC"
+               BlueprintIdentifier = "03A5525C1AE352BC00DB71EC"
                BuildableName = "NapDemo.app"
                BlueprintName = "NapDemo"
                ReferencedContainer = "container:Nap.xcodeproj">
@@ -22,13 +22,13 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "03A552361AE351D400DB71EC"
+               BlueprintIdentifier = "03A552701AE352BD00DB71EC"
                BuildableName = "NapDemoTests.xctest"
                BlueprintName = "NapDemoTests"
                ReferencedContainer = "container:Nap.xcodeproj">
@@ -46,7 +46,7 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "03A552361AE351D400DB71EC"
+               BlueprintIdentifier = "03A552701AE352BD00DB71EC"
                BuildableName = "NapDemoTests.xctest"
                BlueprintName = "NapDemoTests"
                ReferencedContainer = "container:Nap.xcodeproj">
@@ -56,7 +56,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "03A552221AE351D300DB71EC"
+            BlueprintIdentifier = "03A5525C1AE352BC00DB71EC"
             BuildableName = "NapDemo.app"
             BlueprintName = "NapDemo"
             ReferencedContainer = "container:Nap.xcodeproj">
@@ -76,7 +76,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "03A552221AE351D300DB71EC"
+            BlueprintIdentifier = "03A5525C1AE352BC00DB71EC"
             BuildableName = "NapDemo.app"
             BlueprintName = "NapDemo"
             ReferencedContainer = "container:Nap.xcodeproj">
@@ -95,7 +95,7 @@
          runnableDebuggingMode = "0">
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "03A552221AE351D300DB71EC"
+            BlueprintIdentifier = "03A5525C1AE352BC00DB71EC"
             BuildableName = "NapDemo.app"
             BlueprintName = "NapDemo"
             ReferencedContainer = "container:Nap.xcodeproj">
