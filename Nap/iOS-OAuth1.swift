@@ -62,7 +62,7 @@ public class LoginViewController : UIViewController, LoginViewControllerProtocol
     self.webView = UIWebView(frame: CGRect(x: 0, y: 64, width: SCREEN_WIDTH, height: UIScreen.mainScreen().bounds.height - 64))
     let navigationBar = UINavigationBar(frame: CGRect(x: 0, y: 0, width: SCREEN_WIDTH, height: 64))
     let barButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel, target: self, action: "didTappedCancel")
-    let navigationItem = UINavigationItem(title: nil)
+    let navigationItem = UINavigationItem(title: self.manager!.serviceName)
     navigationItem.setLeftBarButtonItem(barButton, animated: false)
     navigationBar.pushNavigationItem(navigationItem, animated: false)
     self.view.addSubview(self.webView)
@@ -79,7 +79,7 @@ public class LoginViewController : UIViewController, LoginViewControllerProtocol
   public func webView(webView: UIWebView, shouldStartLoadWithRequest request: NSURLRequest, navigationType: UIWebViewNavigationType) -> Bool {
     if let verifier = self.manager!.verifierWithURLRequest(request) {
       self.manager?.accessToken(verifier, completionHandler: { (account, error) -> Void in
-        if error != nil { println("Cannot return Access token") }
+        if error != nil { print("Cannot return Access token") }
         else { self.manager?.authDelegate?.didFinishAuthentication(self.manager!,account:account!) }
       })
       self.dismissViewControllerAnimated(true, completion: nil)

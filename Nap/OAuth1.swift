@@ -59,6 +59,7 @@ public class OAuth1Manager : AuthManager {
   
   
   public override init?(options: [String : String]) {
+    
     self.consumerKey = options["consumerKey"]
     self.consumerSecret = options["consumerSecret"]
     self.requestTokenPath = options["requestTokenPath"]

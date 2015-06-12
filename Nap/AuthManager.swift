@@ -17,6 +17,7 @@ public protocol AuthManagerDelegate {
 
 public class AuthManager : Manager {
   
+  public var serviceName        : String
   public let baseURL            : NSURL!
   public var keychainIdentifier : String?
   public var idKey              : String?
@@ -25,8 +26,9 @@ public class AuthManager : Manager {
   public var account            : Account?
   
   
-  public init(baseURL:NSURL) {
+  public init(serviceName: String, baseURL:NSURL) {
     self.baseURL = baseURL
+    self.serviceName = serviceName
     super.init(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
   }
   
@@ -35,6 +37,8 @@ public class AuthManager : Manager {
     var url : NSURL?
     if options["baseURL"] != nil { url = NSURL(string: options["baseURL"]!) }
     self.baseURL = url
+    if let serviceName = options["serviceName"] { self.serviceName = serviceName }
+    else { self.serviceName = "" }
     self.keychainIdentifier = options["keychainIdentifier"]
     self.idKey = options["idKey"]
     self.usernameKey = options["usernameKey"]
