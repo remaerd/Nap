@@ -13,7 +13,7 @@ extension String {
   func urlEncodedStringWithEncoding(encoding: NSStringEncoding) -> String {
     let charactersToBeEscaped = ":/?&=;+!@#$()',*" as CFStringRef
     let charactersToLeaveUnescaped = "[]." as CFStringRef
-    var raw: NSString = self
+    let raw: NSString = self
     let result = CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault, raw, charactersToLeaveUnescaped, charactersToBeEscaped, CFStringConvertNSStringEncodingToEncoding(encoding))
     return result as String
   }
@@ -54,7 +54,7 @@ extension Dictionary {
 
 
 extension NSMutableData {
-  internal func appendBytes(var arrayOfBytes: [UInt8]) {
+  internal func appendBytes(arrayOfBytes: [UInt8]) {
     self.appendBytes(arrayOfBytes, length: arrayOfBytes.count)
   }
   
@@ -106,27 +106,27 @@ func rotateRight(x:UInt64, n:UInt64) -> UInt64 {
 
 
 func reverseBytes(value: UInt32) -> UInt32 {
-  var tmp1 = ((value & 0x000000FF) << 24) | ((value & 0x0000FF00) << 8)
-  var tmp2 = ((value & 0x00FF0000) >> 8)  | ((value & 0xFF000000) >> 24)
+  let tmp1 = ((value & 0x000000FF) << 24) | ((value & 0x0000FF00) << 8)
+  let tmp2 = ((value & 0x00FF0000) >> 8)  | ((value & 0xFF000000) >> 24)
   return tmp1 | tmp2
 }
 
 
 extension Int {
-  public func bytes(_ totalBytes: Int = sizeof(Int)) -> [UInt8] {
+  
+  public func bytes(totalBytes: Int = sizeof(Int)) -> [UInt8] {
     return arrayOfBytes(self, length: totalBytes)
   }
 }
 
 
 func arrayOfBytes<T>(value:T, length:Int? = nil) -> [UInt8] {
-  let totalBytes = length ?? (sizeofValue(value) * 8)
-  var v = value
   
-  var valuePointer = UnsafeMutablePointer<T>.alloc(1)
+  let totalBytes = length ?? (sizeofValue(value) * 8)
+  let valuePointer = UnsafeMutablePointer<T>.alloc(1)
   valuePointer.memory = value
   
-  var bytesPointer = UnsafeMutablePointer<UInt8>(valuePointer)
+  let bytesPointer = UnsafeMutablePointer<UInt8>(valuePointer)
   var bytes = [UInt8](count: totalBytes, repeatedValue: 0)
   for j in 0..<min(sizeof(T),totalBytes) {
     bytes[totalBytes - 1 - j] = (bytesPointer + j).memory

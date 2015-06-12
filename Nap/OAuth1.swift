@@ -71,11 +71,11 @@ public class OAuth1Manager : AuthManager {
     self.realm = options["realm"]
     self.signatureMethod = options["signatureMethod"]
     super.init(options: options)
-    if self.consumerKey == nil { println("consumerKey is missing") }
-    if self.consumerSecret == nil { println("consumerSecret is missing") }
-    if self.requestTokenPath == nil { println("requestTokenPath is missing") }
-    if self.authorizePath == nil { println("authorizePath is missing") }
-    if self.accessTokenPath == nil { println("accessTokenPath is missing") }
+    if self.consumerKey == nil { print("consumerKey is missing") }
+    if self.consumerSecret == nil { print("consumerSecret is missing") }
+    if self.requestTokenPath == nil { print("requestTokenPath is missing") }
+    if self.authorizePath == nil { print("authorizePath is missing") }
+    if self.accessTokenPath == nil { print("accessTokenPath is missing") }
     if (self.consumerKey == nil || self.consumerSecret == nil || self.requestTokenPath == nil || self.authorizePath == nil || self.accessTokenPath == nil) {
       return nil
     }
@@ -87,28 +87,29 @@ public class OAuth1Manager : AuthManager {
   }
   
   
-  private func OAuth1Signature(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]) -> String {
+  private func OAuth1Signature(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]) -> String? {
     var tokenSecret = "\(self.consumerSecret.urlEncodedStringWithEncoding(NSUTF8StringEncoding))&"
     if let accessToken = (self.account as? OAuth1Account)?.accessToken { tokenSecret +=  accessToken.secret.urlEncodedStringWithEncoding(NSUTF8StringEncoding) }
     else if let requestToken = (self.account as? OAuth1Account)?.requestToken { tokenSecret += requestToken.secret.urlEncodedStringWithEncoding(NSUTF8StringEncoding) }
-    let key = tokenSecret.dataUsingEncoding(NSUTF8StringEncoding)
+    guard let key = tokenSecret.dataUsingEncoding(NSUTF8StringEncoding) else { return nil }
     
     var queryString = ""
     var queryStrings = parameters.urlEncodedQueryStringWithEncoding(NSUTF8StringEncoding).componentsSeparatedByString("&") as [String]
-    queryStrings.sort { $0 < $1 }
+    queryStrings.sortInPlace { $0 < $1 }
     queryString = "&".join(queryStrings).urlEncodedStringWithEncoding(NSUTF8StringEncoding)
     
-    let encodedURL = self.baseURL.URLByAppendingPathComponent(URLString.URLString).absoluteString!.urlEncodedStringWithEncoding(NSUTF8StringEncoding)
-    let message = "\(method.rawValue)&\(encodedURL)&\(queryString)".dataUsingEncoding(NSUTF8StringEncoding)
+    let encodedURL = self.baseURL.URLByAppendingPathComponent(URLString.URLString).absoluteString.urlEncodedStringWithEncoding(NSUTF8StringEncoding)
+    guard let message = "\(method.rawValue)&\(encodedURL)&\(queryString)".dataUsingEncoding(NSUTF8StringEncoding) else { return nil }
     
-    let sha1 = HMAC.sha1(key: key!, message: message!)
-    return sha1!.base64EncodedStringWithOptions(nil)
+    let sha1 = HMAC.sha1(key: key, message: message)
+    
+    let options : NSDataBase64EncodingOptions = [.Encoding64CharacterLineLength]
+    return sha1?.base64EncodedStringWithOptions(options)
   }
   
   
   private func OAuth1AuthorizationHeader(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]?) -> String {
     var authorizationParameters = self.OAuthParameters
-    var result = ""
     if let params = parameters {
       for (key,value) in params {
         if key.hasPrefix("oauth_") { authorizationParameters[key] = value }
@@ -117,7 +118,7 @@ public class OAuth1Manager : AuthManager {
     if let token = (self.account as? OAuth1Account)?.accessToken { authorizationParameters["oauth_token"] = token.key }
     authorizationParameters["oauth_signature"] = self.OAuth1Signature(method, URLString, parameters: authorizationParameters)
     var parameterComponents = authorizationParameters.urlEncodedQueryStringWithEncoding(NSUTF8StringEncoding).componentsSeparatedByString("&") as [String]
-    parameterComponents.sort { $0 < $1 }
+    parameterComponents.sortInPlace { $0 < $1 }
     var components = [String]()
     for component in parameterComponents {
       let subComponent = component.componentsSeparatedByString("=") as [String]
@@ -132,13 +133,12 @@ public class OAuth1Manager : AuthManager {
     var mutableParameters = [String: AnyObject]()
     if let params = parameters {
       mutableParameters = params
-      for (key,value) in params {
+      for (key,_) in params {
         if key.hasPrefix("oauth_") { mutableParameters.removeValueForKey(key) }
       }
     }
     
-    var request = super.request(method, URLString, parameters: mutableParameters, encoding: encoding)
-    var mutableRequest = NSMutableURLRequest(URL: self.baseURL.URLByAppendingPathComponent(URLString.URLString))
+    let mutableRequest = NSMutableURLRequest(URL: self.baseURL.URLByAppendingPathComponent(URLString.URLString))
     mutableRequest.HTTPMethod = method.rawValue
     switch encoding {
     case .URL: Alamofire.ParameterEncoding.URL.encode(mutableRequest, parameters: parameters)
@@ -158,7 +158,6 @@ extension OAuth1Manager {
     parameters["oauth_callback"] = self.callbackURL
     parameters["scope"] = self.scope
     
-    var error : NSError?
     let request = self.request(.POST, self.requestTokenPath, parameters: parameters, encoding: ParameterEncoding.URL)
     
     request.response { (request, response, result, error) -> Void in
@@ -180,22 +179,24 @@ extension OAuth1Manager {
   
   
   public func verifierWithURLRequest(request:NSURLRequest) -> String? {
-    let urlString = "\(request.URL!.scheme!)://\(request.URL!.host!)\(request.URL!.path!)"
+    let urlString = "\(request.URL!.scheme)://\(request.URL!.host!)\(request.URL!.path!)"
     if let parameters = request.URL?.query?.parametersFromQueryString() where urlString == self.callbackURL.URLString {
-      if let token = parameters["oauth_token"], verifier = parameters["oauth_verifier"] { return verifier }
+      if let verifier = parameters["oauth_verifier"] { return verifier }
     }
     return nil
   }
 
   
-  public func accessToken(verifier: String, completionHandler:((account: Account?, error: NSError?)  -> Void)) {
+  public func accessToken(verifier: String, completionHandler: ((account: Account?, error: NSError?) -> Void)) {
+    
     if let oauth1Account = self.account as? OAuth1Account, requestToken = oauth1Account.requestToken {
       var parameters = [String: AnyObject]()
       parameters["oauth_token"]    = requestToken.key
       parameters["oauth_verifier"] = verifier
-      
       let request = self.request(.GET, self.accessTokenPath, parameters: parameters, encoding: ParameterEncoding.URL)
-      request.response { (request, response, object, error) -> Void in
+      
+      request.response {
+        (request, response, object, error) -> Void in
         if error != nil { completionHandler(account: nil, error: error) }
         else if let data = object as? NSData, parameterString = NSString(data: data, encoding: NSUTF8StringEncoding) {
           let parameters = (parameterString as String).parametersFromQueryString()
@@ -212,7 +213,7 @@ extension OAuth1Manager {
         }
       }
     } else {
-      var error : NSError?
+      let error = NSError(domain: NapErrorDomain, code: NapError.OAuth1AccountNotFound.rawValue, userInfo: nil)
       completionHandler(account: nil, error: error)
     }
   }

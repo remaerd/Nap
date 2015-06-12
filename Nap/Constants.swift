@@ -13,6 +13,7 @@ public let NapErrorDomain = "nap.error"
 
 public enum NapError : Int {
   case CannotReadOAuth1DataFromQueryString  = 1001
+  case OAuth1AccountNotFound  = 1002
 }
 
 

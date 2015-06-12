@@ -40,7 +40,7 @@ public class AuthManager : Manager {
     self.usernameKey = options["usernameKey"]
     super.init(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
     if self.baseURL == nil {
-      println("Base URL is missing")
+      print("Base URL is missing")
       return nil
     }
   }
