@@ -19,6 +19,11 @@ import Alamofire
 
 public class OAuth1Manager : AuthManager {
   
+  public enum Error : ErrorType {
+    case InvalidProperties
+  }
+  
+  
   let consumerKey             : String!
   let consumerSecret          : String!
   let requestTokenPath        : String!
@@ -58,8 +63,7 @@ public class OAuth1Manager : AuthManager {
 //  }
   
   
-  public override init?(options: [String : String]) {
-    
+  public override init(options: [String : String]) throws {
     self.consumerKey = options["consumerKey"]
     self.consumerSecret = options["consumerSecret"]
     self.requestTokenPath = options["requestTokenPath"]
@@ -71,20 +75,24 @@ public class OAuth1Manager : AuthManager {
     self.scope = options["scope"]
     self.realm = options["realm"]
     self.signatureMethod = options["signatureMethod"]
-    super.init(options: options)
+    do {
+      try super.init(options: options)
+    } catch {
+      throw Error.InvalidBaseURL
+    }
     if self.consumerKey == nil { print("consumerKey is missing") }
     if self.consumerSecret == nil { print("consumerSecret is missing") }
     if self.requestTokenPath == nil { print("requestTokenPath is missing") }
     if self.authorizePath == nil { print("authorizePath is missing") }
     if self.accessTokenPath == nil { print("accessTokenPath is missing") }
     if (self.consumerKey == nil || self.consumerSecret == nil || self.requestTokenPath == nil || self.authorizePath == nil || self.accessTokenPath == nil) {
-      return nil
+      throw Error.InvalidProperties
     }
   }
 
   
-  public required init(configuration: NSURLSessionConfiguration?) {
-    fatalError("init(configuration:) has not been implemented")
+  public required init(configuration: NSURLSessionConfiguration, serverTrustPolicyManager: ServerTrustPolicyManager?) {
+      fatalError("init(configuration:serverTrustPolicyManager:) has not been implemented")
   }
   
   
@@ -129,8 +137,7 @@ public class OAuth1Manager : AuthManager {
   }
   
   
-  public override func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]?, encoding: ParameterEncoding) -> Request {
-    
+  public override func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]?, encoding: ParameterEncoding, headers: [String : String]?) -> Request {
     var mutableParameters = [String: AnyObject]()
     if let params = parameters {
       mutableParameters = params
@@ -159,11 +166,10 @@ extension OAuth1Manager {
     parameters["oauth_callback"] = self.callbackURL
     parameters["scope"] = self.scope
     
-    let request = self.request(.POST, self.requestTokenPath, parameters: parameters, encoding: ParameterEncoding.URL)
-    
+    let request = self.request(.POST, self.requestTokenPath, parameters: parameters, encoding: ParameterEncoding.URL, headers: nil)
     request.response { (request, response, result, error) -> Void in
       if error != nil { completionHandler(account: nil, error: error) }
-      else if let data = result as? NSData, queryString = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
+      else if let data = result, queryString = NSString(data: data, encoding: NSUTF8StringEncoding) as? String {
         let parameters = queryString.parametersFromQueryString()
         if let key = parameters["oauth_token"], secret = parameters["oauth_token_secret"] {
           let account = OAuth1Account(manager: self)
@@ -194,12 +200,12 @@ extension OAuth1Manager {
       var parameters = [String: AnyObject]()
       parameters["oauth_token"]    = requestToken.key
       parameters["oauth_verifier"] = verifier
-      let request = self.request(.GET, self.accessTokenPath, parameters: parameters, encoding: ParameterEncoding.URL)
+      let request = self.request(.GET, self.accessTokenPath, parameters: parameters, encoding: ParameterEncoding.URL, headers: nil)
       
       request.response {
         (request, response, object, error) -> Void in
         if error != nil { completionHandler(account: nil, error: error) }
-        else if let data = object as? NSData, parameterString = NSString(data: data, encoding: NSUTF8StringEncoding) {
+        else if let data = object, parameterString = NSString(data: data, encoding: NSUTF8StringEncoding) {
           let parameters = (parameterString as String).parametersFromQueryString()
           if let token = parameters["oauth_token"], secret = parameters["oauth_token_secret"] {
             let accessToken = OAuth1Token(key: token, secret: secret)

@@ -17,7 +17,12 @@ public protocol AuthManagerDelegate {
 
 public class AuthManager : Manager {
   
-  public var serviceName        : String
+  public enum Error : ErrorType {
+    case InvalidBaseURL
+  }
+  
+  
+  public let serviceName        : String
   public let baseURL            : NSURL!
   public var keychainIdentifier : String?
   public var idKey              : String?
@@ -33,7 +38,7 @@ public class AuthManager : Manager {
   }
   
   
-  public init?(options: [String:String]) {
+  public init(options: [String:String]) throws {
     var url : NSURL?
     if options["baseURL"] != nil { url = NSURL(string: options["baseURL"]!) }
     self.baseURL = url
@@ -43,19 +48,16 @@ public class AuthManager : Manager {
     self.idKey = options["idKey"]
     self.usernameKey = options["usernameKey"]
     super.init(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
-    if self.baseURL == nil {
-      print("Base URL is missing")
-      return nil
-    }
+    if self.baseURL == nil { throw Error.InvalidBaseURL }
   }
+  
 
-  
-  public required init(configuration: NSURLSessionConfiguration?) {
-    fatalError("init(configuration:) has not been implemented")
+  public required init(configuration: NSURLSessionConfiguration, serverTrustPolicyManager: ServerTrustPolicyManager?) {
+      fatalError("init(configuration:serverTrustPolicyManager:) has not been implemented")
   }
   
   
-  public override func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]?, encoding: ParameterEncoding) -> Request {
+  public override func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]?, encoding: ParameterEncoding, headers: [String : String]?) -> Request {
     let url = self.baseURL.URLByAppendingPathComponent(URLString.URLString)
     return super.request(method, url.URLString, parameters: parameters, encoding: encoding)
   }
