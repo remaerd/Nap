@@ -52,7 +52,7 @@ public class AuthManager : Manager {
   }
   
 
-  public required init(configuration: NSURLSessionConfiguration, serverTrustPolicyManager: ServerTrustPolicyManager?) {
+  public required override init(configuration: NSURLSessionConfiguration, serverTrustPolicyManager: ServerTrustPolicyManager?) {
       fatalError("init(configuration:serverTrustPolicyManager:) has not been implemented")
   }
   
