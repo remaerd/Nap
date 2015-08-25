@@ -48,7 +48,7 @@ extension Dictionary {
       let query = "\(keyString)=\(valueString)" as String
       parts.append(query)
     }
-    return "&".join(parts) as String
+    return parts.joinWithSeparator("&")
   }
 }
 

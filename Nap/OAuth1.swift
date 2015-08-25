@@ -105,7 +105,7 @@ public class OAuth1Manager : AuthManager {
     var queryString = ""
     var queryStrings = parameters.urlEncodedQueryStringWithEncoding(NSUTF8StringEncoding).componentsSeparatedByString("&") as [String]
     queryStrings.sortInPlace { $0 < $1 }
-    queryString = "&".join(queryStrings).urlEncodedStringWithEncoding(NSUTF8StringEncoding)
+    queryString = queryStrings.joinWithSeparator("&").urlEncodedStringWithEncoding(NSUTF8StringEncoding)
     
     let encodedURL = self.baseURL.URLByAppendingPathComponent(URLString.URLString).absoluteString.urlEncodedStringWithEncoding(NSUTF8StringEncoding)
     guard let message = "\(method.rawValue)&\(encodedURL)&\(queryString)".dataUsingEncoding(NSUTF8StringEncoding) else { return nil }
@@ -133,7 +133,7 @@ public class OAuth1Manager : AuthManager {
       let subComponent = component.componentsSeparatedByString("=") as [String]
       if subComponent.count == 2 { components.append("\(subComponent[0])=\"\(subComponent[1])\"") }
     }
-    return "OAuth " + ", ".join(components)
+    return "OAuth " + components.joinWithSeparator(", ")
   }
   
   
