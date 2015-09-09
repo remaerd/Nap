@@ -161,7 +161,7 @@ public class OAuth1Manager : AuthManager {
 
 extension OAuth1Manager {
   
-  public func requestToken(completionHandler: ((account: Account?, error: NSError?) -> Void)) {
+  public func requestToken(completionHandler: ((account: Account?, error: ErrorType?) -> Void)) {
     var parameters = [String:AnyObject]()
     parameters["oauth_callback"] = self.callbackURL
     parameters["scope"] = self.scope
@@ -194,7 +194,7 @@ extension OAuth1Manager {
   }
 
   
-  public func accessToken(verifier: String, completionHandler: ((account: Account?, error: NSError?) -> Void)) {
+  public func accessToken(verifier: String, completionHandler: ((account: Account?, error: ErrorType?) -> Void)) {
     
     if let oauth1Account = self.account as? OAuth1Account, requestToken = oauth1Account.requestToken {
       var parameters = [String: AnyObject]()
