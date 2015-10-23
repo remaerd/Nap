@@ -51,11 +51,6 @@ public class AuthManager : Manager {
     if self.baseURL == nil { throw Error.InvalidBaseURL }
   }
   
-
-  public required override init(configuration: NSURLSessionConfiguration, serverTrustPolicyManager: ServerTrustPolicyManager?) {
-      fatalError("init(configuration:serverTrustPolicyManager:) has not been implemented")
-  }
-  
   
   public override func request(method: Alamofire.Method, _ URLString: URLStringConvertible, parameters: [String : AnyObject]?, encoding: ParameterEncoding, headers: [String : String]?) -> Request {
     let url = self.baseURL.URLByAppendingPathComponent(URLString.URLString)
